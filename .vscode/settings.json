@@ -1,8 +1,8 @@
 {
   "files.associations": {
     "gcp_config": "ssh_config",
-<<<<<<< Updated upstream
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "__locale": "cpp"
   }
 =======
     "iosfwd": "cpp",
