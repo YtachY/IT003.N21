@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "gcp_config": "ssh_config",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "__locale": "cpp"
   }
 }
