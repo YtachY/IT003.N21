@@ -1,6 +1,17 @@
 {
   "files.associations": {
     "gcp_config": "ssh_config",
+<<<<<<< Updated upstream
     "iosfwd": "cpp"
   }
+=======
+    "iosfwd": "cpp",
+    "__locale": "cpp",
+    "vector": "cpp"
+  },
+  "conventionalCommits.scopes": [
+    "point3d",
+    "point2d"
+  ]
+>>>>>>> Stashed changes
 }
