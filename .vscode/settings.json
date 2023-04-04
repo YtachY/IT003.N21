@@ -6,6 +6,11 @@
   }
 =======
     "iosfwd": "cpp",
+    "__locale": "cpp"
+  },
+  "conventionalCommits.scopes": [
+    "detectVirus"
+  ]
     "__locale": "cpp",
     "vector": "cpp"
   },
