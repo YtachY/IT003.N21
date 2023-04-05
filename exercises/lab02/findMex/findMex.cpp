@@ -3,78 +3,57 @@
 
 using namespace std;
 
-#include <iostream>
-
-void heapify(int arr[], int n, int i) {
-  int largest = i;
-  int l = 2 * i + 1;
-  int r = 2 * i + 2;
-
-  if (l < n && arr[l] > arr[largest])
-    largest = l;
-
-  if (r < n && arr[r] > arr[largest])
-    largest = r;
-
-  if (largest != i) {
-    swap(arr[i], arr[largest]);
-    heapify(arr, n, largest);
-  }
-}
-
-void heapSort(int arr[], int n) {
-  for (int i = n / 2 - 1; i >= 0; i--)
-    heapify(arr, n, i);
-
-  for (int i = n - 1; i >= 0; i--) {
-    swap(arr[0], arr[i]);
-    heapify(arr, i, 0);
-  }
-}
-void printArray(int arr[], int n) {
-  for (int i = 0; i < n; ++i) {
-    cout << arr[i] << " ";
+void printArray(vector<int> v) {
+  for (auto i : v) {
+    cout << i << ' ';
   }
   cout << "\n";
 }
-int main() {
-  freopen("input.txt", "r", stdin);
-  int n = 0, result = -1;
+
+void readInput(vector<int> &v, int n) {
+  ios::sync_with_stdio(0);
+  // freopen("input.txt", "r", stdin);
+
   cin >> n;
-  if (n <= 0) {
-    result = 0;
-  } else {
-    int *a = new int[n];
-    int temp[n];
+  for (int i = 0; i < n; ++i) {
+    int t;
+    cin >> t;
+    v.push_back(t);
+  }
+}
 
-    for (int i = 0; i < n; ++i) {
-      cin >> a[i];
-      temp[i] = 0;
-    }
+int findMex(vector<int> arr) {
+  int result = 0;
+  vector<int> present(arr.size() + 1, 0);  // initialize a vector to mark presence of integers
 
-    heapSort(a, n);
-
-    for (int i = 0; i < n; ++i) {
-      if (a[i] < n) {
-        ++temp[a[i]];
-      }
-    }
-    printArray(a, n);
-    printArray(temp, n);
-
-    delete[] a;
-    for (int i = 0; i < n; ++i) {
-      if (temp[i] == 0) {
-        result = i;
-        break;
-      }
-      if (i == n - 1) {
-        result = n;
-      }
+  for (int i = 0; i < arr.size(); i++) {
+    if (arr[i] >= 0 && arr[i] <= arr.size()) {
+      ++present[arr[i]];  // mark the presence of integer in the boolean vector
     }
   }
-  if (result > -1) {
-    cout << result;
+
+  for (int i = 0; i < present.size(); i++) {
+    if (!present[i]) {
+      result = i;
+      break;  // return the minimum non-negative integer that is not present in the vector
+    }
+    if (i == present.size() - 1) {
+      result = present.size();  // if all integers are present, return the size of the boolean vector
+    }
   }
+  printArray(present);
+  return result;
+}
+
+int main() {
+  int n;
+  int result = 0;
+  vector<int> a;
+  readInput(a, n);
+
+  result = findMex(a);
+
+  // printArray(a);
+  cout << result;
   return 0;
 }
