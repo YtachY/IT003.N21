@@ -66,8 +66,8 @@ void mergeSort(vector<Point2D> &arr, int left, int right, bool (*compare)(Point2
 
 void readInput(int &a, vector<Point2D> &v) {
   ios::sync_with_stdio(0);
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
+  // freopen("input.txt", "r", stdin);
+  // freopen("output.txt", "w", stdout);
 
   cin >> a;
 
@@ -89,13 +89,5 @@ int main() {
     // cout << "(" << arr[i].x << ", " << arr[i].y << ") ";
     cout << arr[i].x << " " << arr[i].y << "\n";
   }
-
-  // mergeSort(arr, 0, arr.size() - 1, compareY);
-
-  // for (int i = 0; i < arr.size(); i++) {
-  //     cout << "(" << arr[i].x << ", " << arr[i].y << ") ";
-  // }
-  // cout << endl;
-
   return 0;
 }
