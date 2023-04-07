@@ -65,16 +65,20 @@ void printArray(vector<ll> v) {
 
 int main() {
   int n;
-  int result = 1;
+  int result = 0;
   vector<ll> myArray;
   readInput(myArray, n);
 
   heapSort(myArray);
 
-  for (int i = 1; i < myArray.size(); ++i) {
-    if (myArray[i] > myArray[i - 1]) {
-      ++result;
-    }
+  for (int i = 0; i < myArray.size(); ++i) {
+    // if (myArray[i] > myArray[i - 1]) {
+    //   ++result;
+    // }
+    while (i < myArray.size() && myArray[i] == myArray[i + 1])
+      i++;
+
+    result++;
   }
   cout << result;
   // printArray(myArray);
