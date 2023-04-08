@@ -78,8 +78,8 @@ int main() {
       totalDiff++;
     }
   }
-  cout << "totalDiff: " << totalDiff << endl;
-
+  // cout << "totalDiff: " << totalDiff << endl;
+  int dup = k - totalDiff;
   int j = 1;
   result.push_back(myArray[0]);
   for (int i = 0; i < n; ++i) {
@@ -87,10 +87,9 @@ int main() {
       break;
     } else if (myArray[j] > myArray[j - 1]) {
       result.push_back(myArray[j]);
-      --totalDiff;
-    } else if (totalDiff) {
+    } else if (dup > 0) {
       result.push_back(myArray[j]);
-      --totalDiff;
+      --dup;
     }
     ++j;
   }
