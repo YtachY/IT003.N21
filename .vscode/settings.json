@@ -2,21 +2,12 @@
   "files.associations": {
     "gcp_config": "ssh_config",
     "iosfwd": "cpp",
-    "__locale": "cpp"
-  }
-=======
-    "iosfwd": "cpp",
-    "__locale": "cpp"
-  },
-  "conventionalCommits.scopes": [
-    "detectVirus"
-  ]
     "__locale": "cpp",
     "vector": "cpp"
   },
   "conventionalCommits.scopes": [
+    "detectVirus",
     "point3d",
     "point2d"
   ]
->>>>>>> Stashed changes
 }
