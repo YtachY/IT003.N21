@@ -8,6 +8,7 @@
   "conventionalCommits.scopes": [
     "detectVirus",
     "point3d",
-    "point2d"
+    "point2d",
+    "dec2bin"
   ]
 }
