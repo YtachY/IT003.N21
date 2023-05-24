@@ -9,6 +9,11 @@
     "detectVirus",
     "point3d",
     "point2d",
-    "dec2bin"
+    "dec2bin",
+    "insertLinkedList",
+    "kiemKe2",
+    "latex",
+    "reverseLinkedList",
+    "xepHang"
   ]
 }
